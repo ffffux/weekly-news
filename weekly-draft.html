@@ -1,39 +1,51 @@
-CouchDB Weekly News - May 08, 2014
+CouchDB Weekly News - May 16, 2014
 <h4>Blog Posts</h4>
 <ul>
 	<li><a href="https://blogs.apache.org/couchdb/entry/board_report_may_2014">CouchDB Board Repoart (May 2014)</a></li>
 </ul>
-<h4>Weekly CouchDB meeting – <a href="http://wilderness.apache.org/archives/couchdb-meeting-07_05_2014-628.html">summary</a></h4>
+<h4>Weekly CouchDB meeting – <a href="http://wilderness.apache.org/archives/couchdb-meeting-14_05_2014-6930.html">summary</a></h4>
 <ul>
-	<li><strong>1.6.0 release</strong>: 1.6.0-rc.5 is out for testing, so for all systems go. 1.6.x CI is all green, a formal vote will be coming this week</li>
-	<li><strong>rcouch merge status</strong>: testing up to now showed it's functional, it will be suggested for integration branch merge</li>
-	<li><strong>BigCouch merge status</strong>: a massive progress has been made this week. Soon branches will be rewritten to clean up the history, afterwards the community will be asked for help with testing.</li>
-	<li><strong>Fauxton</strong>: agreement that Fauxton replaces Futon in CouchDB 2.0 (post merge) and that resolution of <a href="https://issues.apache.org/jira/browse/COUCHDB-1954">COUCHDB-1954</a> prior to that is critical. There'll be a thread on dev@ mailing list about this and release preparation.</li>
-	<li><strong>by-laws, Code of Conduct, Diversity Statement</strong>: everyone in the community is still invited to read the <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=40511017">by-laws draft</a> and join the discussion on dev@ mailing list (<a href="http://markmail.org/search/?q=issues+with+terabytes+databases+list%3Aorg.apache.couchdb.user+order%3Adate-backward+date%3A201404#query:issues%20with%20terabytes%20databases%20list%3Aorg.apache.couchdb.user%20order%3Adate-backward%20date%3A200802-200810%20date%3A200812-201005%20date%3A201007-201303%20date%3A201305-201306%20date%3A201308-201404%20+page:1+mid:pxnd6vdpjuwjioqw+state:results">see thread</a>); an initial Code of Conduct and Diversity draft will be posted next week</li>
-	<li><strong>project release artefacts</strong>: the current state of what the project release artefacts are will be documented and publicized</li>
+	<li><strong>BigCouch merge</strong>: significant process has been made. We want to encourage everyone to check out the <a href="https://issues.apache.org/jira/browse/COUCHDB-1843">COUCHDB-1843</a> branch and help with testing. Info: to run the bigcouch from merge branch: clone couchdb.git, checkout 1843-feature-bigcouch, ./configure &amp;&amp; make &amp;&amp; dev/run. Please report any errors you find during testing on dev@ Mailing list or on IRC #couchdb-dev.</li>
+	<li><strong>1.6.0 release</strong>: 1.6.0 rc5 is still open vor testing and voting. There are now <a href="http://www.mail-archive.com/dev@couchdb.apache.org/msg32610.html">Windows binaries</a> against Erlang 17.0, – Windows users out there, feel free to test them. On the issues with Erlang 17.0, please also see <a href="https://gist.github.com/chewbranca/07d9a6eed3da7b490b47">this post</a> on what it takes to use it in production. There'll be a follow-up item on this which will be sent to the mailing list this week.</li>
+	<li><strong>CouchDB Meetups</strong>: there have been two CouchDB Meetups in Hamburg and Berlin, Germany, in the last week, and both were amazing. The recap for Hamburg can be found <a href="https://gist.github.com/andywenk/3168d403ea62f204c383">here</a>.</li>
 </ul>
 <h4>Major Discussions</h4>
 <h5>Discussion: Project by-laws (ongoing discussion; <a href="http://markmail.org/search/?q=issues+with+terabytes+databases+list%3Aorg.apache.couchdb.user+order%3Adate-backward+date%3A201404#query:issues%20with%20terabytes%20databases%20list%3Aorg.apache.couchdb.user%20order%3Adate-backward%20date%3A200802-200810%20date%3A200812-201005%20date%3A201007-201303%20date%3A201305-201306%20date%3A201308-201404%20+page:1+mid:pxnd6vdpjuwjioqw+state:results">see thread</a>)</h5>
-The first draft of the by-laws has been modified and is still being discussed. It can be found <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=40511017">here</a>, your comments are very welcome.
-<h5>How to get results in descending order by date and without ID field (<a href="http://markmail.org/search/?q=How+get+results+in+reversed+order+by+date+and+without+id+field+%28stackoverflow%29#query:How%20get%20results%20in%20reversed%20order%20by%20date%20and%20without%20id%20field%20%28stackoverflow%29%20list%3Aorg.apache.couchdb.user%20order%3Adate-backward+page:1+mid:q4cmd6mdepauvcsz+state:results">see thread</a>)</h5>
-The docs for result orders can be found <a href="http://docs.couchdb.org/en/latest/api/ddoc/views.html%20">here</a>. To remove the ID field, users can use a list function.
-<h5>Release Apache CouchDB 1.6.0 rc5 (ongoing testing and discussion; <a href="http://markmail.org/search/?q=[VOTE]+Release+Apache+CouchDB+1.6.0-rc.5#query:[VOTE]%20Release%20Apache%20CouchDB%201.6.0-rc.5%20list%3Aorg.apache.couchdb.dev%20order%3Adate-backward+page:1+mid:j7dja2zetabzslhy+state:results">see thread</a>)</h5>
-The testing for all systems is still in progress. If you want to test, please follow this <a href="http://wiki.apache.org/couchdb/Test_procedure">test procedure</a>. The changes since last vote round can be found <a href="https://git-wip-us.apache.org/repos/asf?p=couchdb.git;a=shortlog;h=refs/heads/1.6.x">here</a>.
+<p>The by-laws have been discussed and updated according to the community's comments. They can be found <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=40511017">here</a>, your feedback is very welcome.</p>
+<h5>Release Apache CouchDB 1.6.0 rc5 (<a href="http://markmail.org/search/?q=[VOTE]+Release+Apache+CouchDB+1.6.0-rc.5#query:[VOTE]%20Release%20Apache%20CouchDB%201.6.0-rc.5%20list%3Aorg.apache.couchdb.dev%20order%3Adate-backward+page:1+mid:j7dja2zetabzslhy+state:results">see thread</a>)</h5>
+<p>The testing and voting for all systems is still in progress.</p>
 <h4>Releases in the CouchDB Universe</h4>
 <ul>
-	<li><a href="http://pouchdb.com/2014/05/01/pouchdb-2.2.0.html">PouchDB 2.2.0</a> – including persistent mapreduce, eventemitter api, replication works for huge datasets</li>
-	<li><a href="https://www.npmjs.org/package/highland-couchr">highland-couchr 1.0.0</a> – streaming style API to <strong>CouchDB</strong>, using couchr under the hood</li>
-	<li><a href="https://www.npmjs.org/package/massage-couch">massage-couch 0.1.0</a> – massage <strong>CouchDB</strong> documents with an OS daemon worker.</li>
+	<li><a href="https://www.npmjs.org/package/couch-daemon">Couch-daemon (1.1.0)</a> – CouchDB Daemon</li>
+	<li><a href="https://t.co/UJdfUSNyY1">couchdb2s3</a> (0.3.0) – export CouchDB databases to line-oriented json files on s3</li>
+	<li><a href="https://t.co/37903f0pMT">highland-couch (0.1.0)</a> – high-level streams for CouchDB</li>
+	<li><a href="https://t.co/ZUZ3Vye8cK">sails-couchdb-orm (0.9.0)</a> – CouchDB adapter for Sails.js and Waterline ORM</li>
 </ul>
 <h4>Opinions</h4>
 <ul>
-	<li>…</li>
+	<li><a href="https://gist.github.com/chewbranca/07d9a6eed3da7b490b47">On the Viability of Erlang Releases and CouchDB</a></li>
 	<li><a href="http://slides.com/tobyhede/an-ode-to-17-database-in-33-minutes-railsconf-2014">An ode to 17 databases in 33 minutes</a> (talk)</li>
 	<li><a href="http://andymatthews.net/read/2014/05/14/Slides-from-cfObjective,-Sass-and-CouchDB">Relaxing with CouchDB</a> (talk, download)</li>
+	<li>On May 13, the first CouchDB Meetup in Hamburg took place. You'll find the recap <a href="https://gist.github.com/andywenk/3168d403ea62f204c383">here</a>, and there's also a <a href="https://plus.google.com/110705229183006710621/posts/6i87wTd7baa%20">G+ Community</a> – the CouchDB people in Hamburg would love to welcome you there or at their next meetup!</li>
 </ul>
 <h4>Use Cases, Questions and Answers</h4>
 <ul>
-	<li>Stack Over</li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23530243/how-to-have-ember-couchdb-kit-pull-data-from-a-view">How to have ember-couchdb-kit pull data from a view</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23524871/where-or-query-couchdb">WHERE OR Query - CouchDB</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23547803/how-to-connect-pinoccio-to-apache-couchdb">How to connect pinoccio to Apache CouchDB</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23561838/couchdb-all-docs-and-filter-design-documents-with-endkey">CouchDB, all_docs and filter design documents with endkey</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23566320/how-to-change-permissions-on-a-couchdb-database-with-python">How to change permissions on a CouchDB database with Python</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23584218/does-updating-a-design-document-in-couchdb-cause-rebuilding-of-views">Does updating a design document in CouchDB cause rebuilding of views?</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23575201/how-to-start-couchdb-from-command-line">How to start CouchDB from command line</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23583342/modify-response-from-couchdb-post-get-session">Modify response from CouchDB POST/GET _session</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23595909/python-couchdb-how-to-update-already-existing-document-by-id">Python, CouchDB: how to Update already existing document by ID</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23603658/angularjs-pouchdb-app-stops-syncing-to-couchdb-when-cache-manifest-added">AngularJS/PouchDB app stops syncing to CouchDB when cache.manifest added</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23602512/how-to-call-couchdb-view-from-java-code">How to call CouchDB view from Java code?</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23609174/error-while-installing-couch-db-version-1-5-1">Error while installing couch DB version 1.5.1</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23620758/couchdb-install-errors-involving-http-c-on-centos">CouchDB Install Errors Involving http.c on CentOS</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23645957/couchdbs-emit-and-mutable-keys">CouchDB's emit and mutable keys</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23619158/changing-couchdb-url-in-ember">Changing CouchDB URL in Ember</a></li>
+	<li>Stack Overflow: <a class="question-hyperlink" href="http://stackoverflow.com/questions/23619981/couchdb-init-terminating-in-do-boot-error-in-ubuntu-14-04">CouchDb 'init terminating in do_boot' error in Ubuntu 14.04</a></li>
 </ul>
 <h4>Get involved!</h4>
 If you want to get into working on CouchDB:
@@ -42,12 +54,6 @@ If you want to get into working on CouchDB:
 	<li>Here's a <a href="https://issues.apache.org/jira/browse/COUCHDB-2178?jql=project%20%3D%20COUCHDB%20AND%20component%20%3D%20Fauxton%20AND%20status%20%3D%20Open%20AND%20cf[12310270]%20%3D%20%22New%20Contributors%20Level%20%28Easy%29%22">list of <strong>beginner tickets</strong></a> around our currently ongoing <a href="https://www.youtube.com/watch?v=R8b4kXBF01s">Fauxton</a>-implementation. If you have any questions or need help, don't hesitate to contact us in the couchdb-dev IRC room (#couchdb-dev) – Garren (garren) and Sue (deathbear) are happy to help.</li>
 </ul>
 We'd be happy to have you!
-<h4>Events</h4>
-<ul>
-	<li>May 08, Berlin, Germany: the monthly <a href="http://www.meetup.com/CouchDB-Hack-Night-Berlin/events/174508392/">CouchDB Hack Night</a> is up again</li>
-	<li>May 13, Hamburg, Germany: the first <a href="https://plus.google.com/u/0/events/cvpbo7g50t77ii8nvdkitche8h8">CouchDB User Group meeting</a> in Hamburg</li>
-	<li>May 13, New York, USA: <a href="http://www.meetup.com/mysqlnyc/events/178818342/">Database Superstars Panel, Future of NoSQL &amp; NewSQL</a>: CouchDB, NuoDB, OracleNoSQL</li>
-</ul>
 <h4>Job opportunities for people with CouchDB skills</h4>
 <ul>
 	<li><a href="http://jobs.rubynow.com/jobs/6404">Web Application Developer</a>, <em>Conroe, Texas, USA</em></li>
@@ -58,7 +64,6 @@ We'd be happy to have you!
 </ul>
 <h4>… and also in the news</h4>
 <ul>
-	<li><a href="http://sivers.org/ml">The Meaning of Life</a> - a talk</li>
-	<li><a href="http://america.aljazeera.com/articles/2014/5/6/nsa-chief-google.html">Emails reveal close Google relationship with NSA</a></li>
+	<li><a href="http://vimeo.com/95066828">Computers are a Sadness, I am the Cure</a> – a talk</li>
 </ul>
 <em>Posted on behalf of Lena Reinhard.</em>
